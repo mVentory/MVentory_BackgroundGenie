@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Creative Commons License BY-NC-ND.
+ * By Attribution (BY) - You can share this file unchanged, including
+ * this copyright statement.
+ * Non-Commercial (NC) - You can use this file for non-commercial activities.
+ * A commercial license can be purchased separately from mventory.com.
+ * No Derivatives (ND) - You can make changes to this file for your own use,
+ * but you cannot share or redistribute the changes.
+ *
+ * See the full license at http://creativecommons.org/licenses/by-nc-nd/4.0/
+ *
+ * @package MVentory/BackgroundGenie
+ * @copyright Copyright (c) 2015 mVentory Ltd. (http://mventory.com)
+ * @license http://creativecommons.org/licenses/by-nc-nd/4.0/
+ */
+-->
+
+<config>
+  <sections>
+    <bg_genie translate="label">
+      <label>BackGround Genie</label>
+      <tab>mventory</tab>
+      <frontend_type>text</frontend_type>
+
+      <show_in_default>1</show_in_default>
+      <show_in_website>0</show_in_website>
+      <show_in_store>0</show_in_store>
+
+      <sort_order>3</sort_order>
+
+      <groups>
+        <settings translate="label comment" module="mventory">
+          <label>Settings</label>
+          <comment>
+            <![CDATA[
+            <ul id="mventory-matching-messages" class="messages">
+              <li class="notice-msg">
+                <span>All new photos can be held in a special folder for review before posting on the website. The review may include editing by external staff via Dropbox or Google Drive sync. <a target="_blank" href="//mventory.com"> Learn more &hellip;</a></span>
+              </li>
+            </ul>
+            ]]>
+          </comment>
+          <footer>
+            <![CDATA[
+            <div id="mventory-dropbox-system-howto" class="system-fieldset-sub-head">
+              <h4>How to use DropBox for image editing</h4>
+
+              <ol>
+                <li>Sign up for a new DropBox account.</li>
+                <li>Install DropBox client for Linux on your Magento server.</li>
+                <li>Configure DropBox daemon to sync the holding folder with your account.</li>
+                <li>Share the account details with your image editor and ask them to sync the holding folder. Ideally there shouldn't be any other folders in that account for security reasons. </li>
+              </ol>
+
+              <p>When a new file is uploaded to Magento via [mVentory Android app] it is automatically copied to the holding folder and is synced to a local folder on the computer of your image editor. They can <a target="_blank" href="https://www.dropbox.com/en/help/34">configure notifications</a> to be alerted about any new files uploaded by you.</p>
+
+              <p>Your image editor can open, edit and save the files locally. Any changes will be synced to the holding folder on Magento server and applied to product images automatically or after a review.</p>
+
+              <p>Read more about this process on <a target="_blank" href="//mventory.com">mventory.com</a></p>
+            </div>
+            ]]>
+          </footer>
+          <frontend_model>mventory/setting_fieldset</frontend_model>
+
+          <show_in_default>1</show_in_default>
+          <show_in_website>0</show_in_website>
+          <show_in_store>0</show_in_store>
+
+          <sort_order>1</sort_order>
+
+          <fields>
+            <enabled translate="label comment tooltip">
+              <label>Enabled</label>
+              <comment>Toggle image review feature on/off.</comment>
+              <tooltip>Make sure you don't have images pending approval before disabling it.</tooltip>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+
+              <sort_order>1</sort_order>
+            </enabled>
+
+            <backup_dir translate="label comment tooltip">
+              <label>Backup folder</label>
+              <comment>Backup folder in media/.</comment>
+              <tooltip>PLACEHOLDER</tooltip>
+              <frontend_type>text</frontend_type>
+              <backend_model>mventory/system_config_backend_imgclip_backupfolder</backend_model>
+
+              <depends>
+                <enabled>1</enabled>
+              </depends>
+
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+
+              <sort_order>2</sort_order>
+            </backup_dir>
+
+            <exclude_new translate="label comment tooltip">
+              <label>Exclude new</label>
+              <comment>New photos are hidden until approved</comment>
+              <tooltip>New photos have "exclude" flag set on and can be enabled by removing the flag in Images tab of the product details page in the admin or via mVentory app.</tooltip>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+
+              <depends>
+                <enabled>1</enabled>
+              </depends>
+
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+
+              <sort_order>3</sort_order>
+            </exclude_new>
+
+            <auto_replace translate="label comment tooltip">
+              <label>Auto-replace</label>
+              <comment>Edited photos replace originals automatically</comment>
+              <tooltip>If a photo was edited and re-saved in the holding folder it will automatically replace the original product photo (Yes) or wait for a review on ImageClip review page (No).</tooltip>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+
+              <depends>
+                <enabled>1</enabled>
+              </depends>
+
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+
+              <sort_order>4</sort_order>
+            </auto_replace>
+
+            <log_file translate="label comment tooltip">
+              <label>Log file</label>
+              <comment>For all extension activity.</comment>
+              <tooltip>All actions performed via the extension are logged into this file. You must remove stale records or enable automated clean up using system tools.</tooltip>
+              <frontend_model>mventory/system_config_form_field_imgcliplog</frontend_model>
+              <backend_model>mventory/system_config_backend_imgclip_csvlog</backend_model>
+
+              <depends>
+                <enabled>1</enabled>
+              </depends>
+
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+
+              <sort_order>5</sort_order>
+            </log_file>
+
+            <dropbox_options translate="label">
+              <label>Dropbox options</label>
+              <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+
+              <depends>
+                <enabled>1</enabled>
+              </depends>
+
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+
+              <sort_order>6</sort_order>
+            </dropbox_options>
+
+            <dropbox_token translate="label comment tooltip">
+              <label>Token</label>
+              <comment>Token from dropbox app.</comment>
+              <tooltip>Eg 27ZEc1bz3fMAAAAAAAAABOK7q7hAmT55Jy2DcG2hGlGVXQUNwic6EhdNVwt4TEwi</tooltip>
+              <frontend_type>text</frontend_type>
+              <frontend_class>required-entry</frontend_class>
+
+              <depends>
+                <enabled>1</enabled>
+              </depends>
+
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+
+              <sort_order>7</sort_order>
+            </dropbox_token>
+
+            <dropbox_path translate="label comment tooltip">
+              <label>Web folder path</label>
+              <comment>The path in dropbox (/apps/images).</comment>
+              <tooltip>This is the path as stored in Dropbox. The Dropbox "file-system" so to speak.</tooltip>
+              <frontend_type>text</frontend_type>
+              <backend_model>mventory/setting_backend_dbxpath</backend_model>
+              <frontend_class>required-entry</frontend_class>
+
+              <depends>
+                <enabled>1</enabled>
+              </depends>
+
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+
+              <sort_order>8</sort_order>
+            </dropbox_path>
+
+            <image_requirements translate="label">
+              <label>Image requirements</label>
+              <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+
+              <depends>
+                <enabled>1</enabled>
+              </depends>
+
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+
+              <sort_order>9</sort_order>
+            </image_requirements>
+
+            <ideal_width translate="label tooltip">
+              <label>Ideal width, px</label>
+              <tooltip>Ideal image size is defined by your Magento theme. Images may have slightly different size, but should adhere to the same proportions. Any discrepancies will be highlighted on the review page in mVentory app.</tooltip>
+              <frontend_type>text</frontend_type>
+
+              <depends>
+                <enabled>1</enabled>
+              </depends>
+
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+
+              <sort_order>10</sort_order>
+            </ideal_width>
+
+            <ideal_height translate="label comment">
+              <label>Ideal height, px</label>
+              <comment>Ideal full image size</comment>
+              <frontend_type>text</frontend_type>
+
+              <depends>
+                <enabled>1</enabled>
+              </depends>
+
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+
+              <sort_order>11</sort_order>
+            </ideal_height>
+
+            <feedback_email translate="label comment tooltip">
+              <label>Feedback email</label>
+              <comment>The email address of your image editor</comment>
+              <tooltip>The app will help you email feedback to the image editor. Use comma-separated list for more than one.</tooltip>
+              <frontend_type>text</frontend_type>
+
+              <depends>
+                <enabled>1</enabled>
+              </depends>
+
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+
+              <sort_order>12</sort_order>
+            </feedback_email>
+          </fields>
+        </settings>
+      </groups>
+    </bg_genie>
+  </sections>
+</config>
