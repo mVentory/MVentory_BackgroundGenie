@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Creative Commons License BY-NC-ND.
+ * By Attribution (BY) - You can share this file unchanged, including
+ * this copyright statement.
+ * Non-Commercial (NC) - You can use this file for non-commercial activities.
+ * A commercial license can be purchased separately from mventory.com.
+ * No Derivatives (ND) - You can make changes to this file for your own use,
+ * but you cannot share or redistribute the changes.
+ *
+ * See the full license at http://creativecommons.org/licenses/by-nc-nd/4.0/
+ *
+ * @package MVentory/BackgroundGenie
+ * @copyright Copyright (c) 2015 mVentory Ltd. (http://mventory.com)
+ * @license http://creativecommons.org/licenses/by-nc-nd/4.0/
+ * @author Anatoly A. Kazantsev <anatoly@mventory.com>
+ */
+
+?>
+
+<?php
+
+$_dbxUrl = Mage::getModel('core/url')->getUrl('mventory/dropbox');
+
+?>
+
+<div id="mventory-dropbox-system-howto" class="mventory-field-fixed-width">
+  <h4>How to use DropBox for image editing</h4>
+
+  <ol>
+    <li>Log into your Dropbox account or sign up for a new one.</li>
+    <li>
+      Follow the following steps to create a new API App:
+
+      <ul>
+        <li>Navigate to <a target="_blank" href="https://www.dropbox.com/developers/apps/">https://www.dropbox.com/developers/apps/</a></li>
+        <li>Click Create App button (top right of the page).</li>
+        <li>Select Dropbox API app</li>
+        <li>Select No - My app needs access to files already on Dropbox.</li>
+        <li>Select All file types - My app needs access to user's full Dropbox.</li>
+        <li>Enter BGG-companyName as the app name and create the app.</li>
+        <li>Scroll down to Webhooks, enter <span style="font-style: italic;"><?php echo $_dbxUrl ?></span> and click Add.</li>
+      </ul>
+    </li>
+    <li>Share the Dropbox folder with your image editor. </li>
+  </ol>
+
+  <p>When a new file is uploaded to Magento via <a target="_blank" href="https://play.google.com/store/apps/details?id=com.mventory">mVentory Android app</a>, it is automatically uploaded to the Dropbox folder you specified, where your image editor has direct access to it. They can open, edit and save the file and any changes will be automatically uploaded back to Magento and will replace original images. Hint: For their convenience, your image editor can <a target="_blank" href="https://www.dropbox.com/en/help/34">configure Dropbox notifications</a> to be alerted about any new files uploaded by you.</p>
+
+  <p>Read more about this process on <a target="_blank" href="http://mventory.com">mventory.com</a></p>
+</div>

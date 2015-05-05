@@ -1,4 +1,5 @@
-etc/        app/code/community/MVentory/BackgroundGenie/etc/
+etc/                app/code/community/MVentory/BackgroundGenie/etc/
+adminhtml/template  app/design/adminhtml/default/default/template/bg_genie
 
-module.xml  app/etc/modules/MVentory_BackgroundGenie.xml
-build.xml   var/connect/MVentory_BackgroundGenie.xml
+module.xml          app/etc/modules/MVentory_BackgroundGenie.xml
+build.xml           var/connect/MVentory_BackgroundGenie.xml

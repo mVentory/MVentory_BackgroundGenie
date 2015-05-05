@@ -1,5 +1,5 @@
 <_>
-   <form_key>wUYdj2Aes1qrNG5j</form_key>
+   <form_key>cnrwlXBE45TKC92I</form_key>
    <name>MVentory_BackgroundGenie</name>
    <channel>community</channel>
    <version_ids>
@@ -40,7 +40,7 @@
             <max/>
          </max>
          <files>
-            <files>   </files>
+            <files></files>
          </files>
       </package>
       <extension>
@@ -60,23 +60,28 @@
          <target>magelocal</target>
          <target>mageetc</target>
          <target>magecommunity</target>
+         <target>magedesign</target>
       </target>
       <path>
          <path/>
          <path>modules/MVentory_BackgroundGenie.xml</path>
          <path>MVentory/BackgroundGenie</path>
+         <path>adminhtml/default/default/template/bg_genie/</path>
       </path>
       <type>
          <type>file</type>
          <type>file</type>
+         <type>dir</type>
          <type>dir</type>
       </type>
       <include>
          <include/>
          <include/>
          <include/>
+         <include/>
       </include>
       <ignore>
+         <ignore/>
          <ignore/>
          <ignore/>
          <ignore/>
