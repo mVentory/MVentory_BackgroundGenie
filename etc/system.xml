@@ -72,7 +72,7 @@
               <comment>Backup folder in media/</comment>
               <tooltip>All images uploaded to Dropbox get backed up into this folder.</tooltip>
               <frontend_type>text</frontend_type>
-              <backend_model>mventory/system_config_backend_imgclip_backupfolder</backend_model>
+              <backend_model>mventory/setting_backend_backupdir</backend_model>
 
               <depends>
                 <enabled>1</enabled>
