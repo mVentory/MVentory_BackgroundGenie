@@ -129,7 +129,6 @@
               <comment>For all extension activity.</comment>
               <tooltip>All actions performed via the extension are logged into this file. You must remove stale records or enable automated clean up using system tools.</tooltip>
               <frontend_model>mventory/system_config_form_field_imgcliplog</frontend_model>
-              <backend_model>mventory/system_config_backend_imgclip_csvlog</backend_model>
 
               <depends>
                 <enabled>1</enabled>
