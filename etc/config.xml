@@ -52,7 +52,7 @@
   <default>
     <bg_genie>
       <settings>
-        <backup_dir>backup</backup_dir>
+        <backup_dir>backup/</backup_dir>
         <exclude_new>1</exclude_new>
         <auto_replace>1</auto_replace>
         <log_file>var/log/imglog.csv</log_file>
