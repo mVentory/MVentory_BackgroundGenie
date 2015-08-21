@@ -32,6 +32,7 @@ $_dbxUrl = Mage::getModel('core/url')->getUrl('mventory/dropbox');
 
   <ol>
     <li>Log into your Dropbox account or sign up for a new one.</li>
+    <li>Create a folder called "my-company-name-magento" to tell it apart from other folders when you share it.</li>
     <li>
       Follow the following steps to create a new API App:
 
@@ -45,7 +46,7 @@ $_dbxUrl = Mage::getModel('core/url')->getUrl('mventory/dropbox');
         <li>Scroll down to Webhooks, enter <span style="font-style: italic;"><?php echo $_dbxUrl ?></span> and click Add.</li>
       </ul>
     </li>
-    <li>Share the Dropbox folder with your image editor. </li>
+    <li>Share the Dropbox folder with your image editor.</li>
   </ol>
 
   <p>When a new file is uploaded to Magento via <a target="_blank" href="https://play.google.com/store/apps/details?id=com.mventory">mVentory Android app</a>, it is automatically uploaded to the Dropbox folder you specified, where your image editor has direct access to it. They can open, edit and save the file and any changes will be automatically uploaded back to Magento and will replace original images. Hint: For their convenience, your image editor can <a target="_blank" href="https://www.dropbox.com/en/help/34">configure Dropbox notifications</a> to be alerted about any new files uploaded by you.</p>
