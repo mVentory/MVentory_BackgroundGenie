@@ -261,7 +261,7 @@
             -->
 
             <help>
-              <template>bg_genie/config/help.phtml</template>
+              <template>background-genie/config/help.phtml</template>
               <frontend_model>mventory/system_config_form_field_template</frontend_model>
 
               <show_in_default>1</show_in_default>

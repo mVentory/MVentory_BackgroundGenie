@@ -5,8 +5,19 @@
    <version_ids>
       <version_ids>2</version_ids>
    </version_ids>
-   <summary>MVentory_BackgroundGenie</summary>
-   <description>MVentory_BackgroundGenie</description>
+   <summary>This extension syncs photos uploaded to Magento via Magento Smartphone App with a shared Dropbox folder.
+You or your image editor can open the file on a local computer, remove the background, save the file and it will be synced back to the website.</summary>
+   <description>The easiest and the quickest way to add product photos to the website is with our Android app. It doesn’t matter where the photo comes from – the app uploads it to the website and the shared folder.
+
+You can:
+* take a photo with the phone
+* take a photo with a digital camera connected to the app
+* find a photo on the Internet
+* choose from stock photos you already have
+
+You or your image editor can open the photos in the shared folder of a local computer, edit, save and the image with no background will appear on the right product page automatically.
+
+Watch a demo on http://mventory.com/photo-background-remover/</description>
    <license>CC BY-NC-ND 4.0</license>
    <license_uri>http://creativecommons.org/licenses/by-nc-nd/4.0/</license_uri>
    <version>1.0.0</version>
